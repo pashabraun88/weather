@@ -8,9 +8,9 @@ interface Props{}
 
 export const Header = (props: Props) => {
     const options = [
-        { value: 'city-1', label: 'Lviv' },
-        { value: 'city-2', label: 'Kyiv' },
-        { value: 'city-3', label: 'Novoyavorivsk' }
+        { value: 'city-1', label: 'Львів' },
+        { value: 'city-2', label: 'Київ' },
+        { value: 'city-3', label: 'Новояворівськ' }
     ];
 
     const colorStyles = {
