@@ -1,5 +1,5 @@
 
-import { GlobalSvgSelector } from '../../assets/images/icons/global/GlobalSvgSelector'
+import { GlobalSvgSelector } from '../../assets/icons/global/GlobalSvgSelector';
 import s from './Header.module.scss';
 import Select from 'react-select'
 
@@ -29,7 +29,7 @@ export const Header = (props: Props) => {
         <header className={s.header}>
         <div className={s.wrapper}>
             <div className={s.logo}><GlobalSvgSelector id="header-logo"/></div>
-            <div className={s.title}>Weather</div>
+            <div className={s.title}>Прогноз погоди</div>
         </div>
         <div className={s.wrapper}>
             <div className={s.change_theme}><GlobalSvgSelector id="change-theme" /></div>
