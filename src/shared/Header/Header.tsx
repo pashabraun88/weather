@@ -29,7 +29,7 @@ export const Header = (props: Props) => {
         <header className={s.header}>
         <div className={s.wrapper}>
             <div className={s.logo}><GlobalSvgSelector id="header-logo"/></div>
-            <div className={s.title}>Прогноз погоди</div>
+            <div className={s.title}>Прогноз Погоди</div>
         </div>
         <div className={s.wrapper}>
             <div className={s.change_theme}><GlobalSvgSelector id="change-theme" /></div>
