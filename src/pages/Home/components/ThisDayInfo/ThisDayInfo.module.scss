@@ -6,10 +6,10 @@
     width: 100%;
     padding: 40px;
     margin-top: 20px;
-    background: $lite-background;
+    background: var(#{--components-background-default});
     box-shadow: $box-shadow;
     border-radius: $border-radius;
-    background: $lite-background;
+    
 }
 
 .item{
@@ -47,7 +47,8 @@
 }
 
 .indicator__value {
-    columns: $lite-color;
+    color: var(#{--text-color-default});
+    font-weight: 500;
 }
 
 .cloud {
