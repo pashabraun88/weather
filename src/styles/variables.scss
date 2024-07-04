@@ -6,6 +6,11 @@ $border-radius: 20px;
 $base-color: #939cb0;
 $card-day-color: rgba(71, 147, 255, 0.2);
 
+$shadow-cloud-d: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+$shadow-cloud-l: none;
+
+
+
 $light-color: #000;
 $dark-color: #fff;
 $base-color: #939cb0;
@@ -47,4 +52,9 @@ $card-box-shadow-dark: 0px 3px 20px rgba(5, 5, 5, 0.28);
     --text-color-dark: #{$dark-color};
     --text-color-light: #{$light-color};
     --text-color-default: var(#{--text-color-light});
+
+  //shadow-cloud
+  --background-shadow-cloud-dark:  #{$shadow-cloud-d};
+  --background-shadow-cloud-light: #{$shadow-cloud-l};
+  --background-shadow-cloud-default: var(#{--background-shadow-cloud-light});
 }

@@ -1,7 +1,5 @@
 import { Theme } from "../context/ThemeContext";
 
-
-
 export function changeCssRootVariables (theme: Theme) {
     const root = document.querySelector(':root') as HTMLElement;
 
@@ -10,7 +8,8 @@ export function changeCssRootVariables (theme: Theme) {
             'components-background',
             'card-background',
             'card-shadow',
-            'text-color'
+            'text-color',
+            'background-shadow-cloud'
         ];
 
         componentsTheme.forEach(components => {

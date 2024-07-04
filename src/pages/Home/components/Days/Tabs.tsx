@@ -7,12 +7,12 @@ export const Tabs = (props: Props) => {
         {
         value: 'На тиждень',
         },
-        {
-        value: 'На 10 днів',
-        },
-        {
-        value: 'На місяць',
-        },
+        // {
+        // value: 'На 10 днів',
+        // },
+        // {
+        // value: 'На місяць',
+        // },
     ];
 return (
     <div className={s.tabs}>

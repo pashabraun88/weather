@@ -1,9 +1,12 @@
 import { IndicatorSvgSelector } from "../../../../assets/icons/indicators/IndicatorSvgSelector";
 import s from "./ThisDayInfo.module.scss"
 import { Item } from "./ThisDayInfo";
+
 interface Props {
     item: Item;
 }
+
+
 
 export const ThisDayItems = ({ item }: Props) => {
     const { icon_id, name, value} = item;

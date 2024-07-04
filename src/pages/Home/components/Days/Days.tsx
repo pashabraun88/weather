@@ -76,7 +76,7 @@ return <>
 <Tabs />
 <div className={s.days}>
     {days.map((day: Day) => (
-        <Cards day={day} />
+        <Cards day={day} key={day.day}/>
     ))}
 </div>
 </>

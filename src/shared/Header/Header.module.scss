@@ -32,3 +32,12 @@
     color: $primary-color;
 }
 
+.error {
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+    position: absolute;
+    right: auto;
+    top: 70px;
+    padding-left: 52px;
+}

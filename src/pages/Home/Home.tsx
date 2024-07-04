@@ -13,6 +13,7 @@ export const Home = (props: Props) => {
         <div className={s.wrapper}>
                 <ThisDay />
                 <ThisDayInfo />
+                
         </div>
         <Days />
     </div>
