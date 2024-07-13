@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { Cards } from "./Cards";
 import s from "./Days.module.scss"
 import { Tabs } from "./Tabs";
+import { useEffect } from "react";
+import { ForecastEntry, useWeather } from "../../../../context/WeatherContext";
+import { getIconId } from "../../../../utils/iconMapper";
+import { Popup } from "../../../../shared/Popup/Popup";
 
 interface Props {}
 
@@ -11,73 +16,58 @@ export interface Day {
     temp_day: string,
     temp_night: string,
     info: string,
+    fullData: ForecastEntry,
 }
 
 export const Days = (props: Props) => {
-    const days: Day[] = [
-    {
-        day: 'Сьогодні',
-        day_info: '20 лип',
-        icon_id: 'sun',
-        temp_day: '+25',
-        temp_night: '+15',
-        info: 'Сонячно',
-    },
-    {
-        day: 'Завтра',
-        day_info: '21 лип',
-        icon_id: 'small_rain_sun',
-        temp_day: '+18',
-        temp_night: '+15',
-        info: 'Сонячно,невеликий дощ',
-    },
-    {
-        day: 'Ср',
-        day_info: '22 лип',
-        icon_id: 'small_rain',
-        temp_day: '+18',
-        temp_night: '+15',
-        info: 'Не великий дощ',
-    },
-    {
-        day: 'Чт',
-        day_info: '23 лип',
-        icon_id: 'mainly_cloudy',
-        temp_day: '+18',
-        temp_night: '+15',
-        info: 'Хмарно',
-    },
-    {
-        day: 'Пт',
-        day_info: '24 лип',
-        icon_id: 'rain',
-        temp_day: '+18',
-        temp_night: '+15',
-        info: 'Дощ',
-    },
-    {
-        day: 'Сб',
-        day_info: '25 лип',
-        icon_id: 'sun',
-        temp_day: '+18',
-        temp_night: '+15',
-        info: 'Сонячно',
-    },
-    {
-        day: 'Нд',
-        day_info: '26 липня',
-        icon_id: 'sun',
-        temp_day: '+18',
-        temp_night: '+15',
-        info: 'Сонячно',
-    },
-    ];
+    
+    const {forecast, selectDay, selectedDay, clearSelectedDay, data } = useWeather();
+    const [days, setDays] = useState<Day[]>([]);
+    
+    
+        useEffect(() => {
+        const capitalizeFirstLatter = (string: string) => {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        
+        if(forecast) {
+            
+            const newDays: Day[] = forecast.list.slice(0, 7).map((day) => ({
+                day: capitalizeFirstLatter(new Date(day.dt_txt).toLocaleDateString('uk-UA', {weekday: 'long'})),
+                day_info: new Date(day.dt_txt).toLocaleDateString('uk-UA', {day: '2-digit', month: 'short'}),
+                icon_id:  getIconId(day.weather[0].icon),
+                temp_day: `${Math.floor(day.main.temp)}°C`,
+                temp_night: `${Math.floor(day.main.temp_min)}°C`,
+                info: day.weather[0].description,
+                fullData: day
+            }));
+            
+            setDays(newDays);
+        }
+    }, [forecast]);
+
+    const handleDayClick = (day: Day) => {
+        selectDay(day.fullData)
+    }
+    
+    const city = data?.name || 'Unknown city'
+    // const handleClosePopup = () => {
+    //     selectDay(day.)
+    // }
+    
 return <>
 <Tabs />
-<div className={s.days}>
-    {days.map((day: Day) => (
+
+    {/* {days.map((day: Day) => (
         <Cards day={day} key={day.day}/>
-    ))}
-</div>
+    ))} */}
+    <div className={s.days}>
+                {days.map((day: Day, index: number) => (
+                    <div key={index} onClick={() => handleDayClick(day)}>
+                        <Cards day={day} />
+                    </div>
+                ))}
+    </div>
+    {selectedDay && <Popup day={selectedDay} onClose={clearSelectedDay} city={city}/>}
 </>
 }

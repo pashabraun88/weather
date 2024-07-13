@@ -12,6 +12,7 @@
     align-items: center;
 }
 
+
 .change_theme,
 .logo {
     margin-right: 20px;
@@ -30,14 +31,79 @@
     font-size: 25px;
     font-weight: bold;
     color: $primary-color;
+    cursor: pointer;
 }
 
 .error {
     color: red;
-    font-size: 14px;
+    font-size: 18px;
     margin-left: 5px;
     position: absolute;
     right: auto;
-    top: 70px;
+    top: 75px;
     padding-left: 52px;
+    font-weight: 500;
 }
+
+.input__city {
+    & label.Mui-focused {
+      color: #f70202;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    & .MuiInput-underline:after {
+      border-bottom-color: green;
+    }
+     .MuiOutlinedInput-root {
+      & fieldset {
+        border-color: gray;
+      }
+      &:hover fieldset {
+        background-color: yellow;
+      }
+      &.Mui-focused fieldset {
+        border-color: #082a88;
+      }
+      background-color: $base-color;
+    }
+    width: 200px; 
+    margin: 100px;
+  }
+
+  // @media (max-width: 1210px) {
+  //   .header {
+  //     display: flex;
+  //     align-items: flex-start;
+  //     justify-content: flex-start;
+  //     width: 100%;
+  //     flex-wrap: nowrap;
+  //     flex-direction: column;
+      
+  // }
+  // .wrapper {
+  //   margin-bottom: 5px;
+  // }
+  // }
+
+  @media (max-width: 1210px) {
+    .header {
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 755px) {
+    .header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          width: 100%;
+          flex-wrap: nowrap;
+          flex-direction: column;
+      }
+    .wrapper {
+          margin-bottom: 5px;
+          width: 100%;
+        }
+  }
+
+  

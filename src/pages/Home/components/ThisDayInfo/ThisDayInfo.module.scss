@@ -75,3 +75,53 @@
         transform: translateX(0);
     }
 }
+
+@media (max-width: 1165px) {
+    .this__day_info {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 1006px) {
+    .this__day_info {
+        max-width: 500px;
+    }
+}
+@media (max-width: 906px) {
+    .this__day_info {
+        max-width: 450px;
+    }
+}
+@media (max-width: 802px) {
+    .this__day_info {
+        max-width: 450px;
+    }
+}
+@media (max-width: 450px) {
+    .this__day_info {
+        gap: 5px;
+    }
+    .indicator {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        border-radius: 50%;
+    }
+.indicator__name,
+.indicator__value {
+    font-size: 9px;
+}
+.indicator,
+.indicator__name {
+        margin-right: 7px;
+    }
+}
+
+
+
+
+

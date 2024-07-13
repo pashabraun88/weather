@@ -28,7 +28,7 @@ export const ThisDay: React.FC = () => {
     <div className={s.this__day}>
         <div className={s.top__block}>
             <div className={s.top__block_wrapper}>
-                <div className={s.this__temp}>{data ?(<span>{Math.floor(data.main.temp)}°C</span>) : null}</div>
+                <div className={s.this__temp}>{data ?(<span className={s.this__temp_number}>{Math.floor(data.main.temp)}°C</span>) : null}</div>
                 <div className={s.this__day_name}>Сьогодні</div>
             </div>
             {data && data.weather[0] && (<GlobalSvgSelector id={getIconId(data.weather[0].icon)} /> )}

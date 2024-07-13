@@ -5,7 +5,7 @@ interface Props {}
 export const Tabs = (props: Props) => {
     const tabs = [
         {
-        value: 'На тиждень',
+        value: 'На 5 днів. На 18:00',
         },
         // {
         // value: 'На 10 днів',
@@ -23,7 +23,7 @@ return (
         </div>
         ))}
         </div>
-        <div className={s.cancel}>Відмінити</div>
+        {/* <div className={s.cancel}>Відмінити</div> */}
     </div>
 );
 };

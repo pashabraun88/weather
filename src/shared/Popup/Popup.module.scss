@@ -1,8 +1,8 @@
 @import "../../styles/variables.scss";
 
 .popup {
-    position: absolute;
-    top: 40%;
+    position:fixed;
+    top: 20%;
     left: calc(50% - 325px);
     z-index: 1001;
     display: flex;
@@ -12,22 +12,24 @@
     padding: 40px;
     margin-top: 20px;
     max-width: 750px;
-    background: $light-background;
+    background: var(#{--components-background-default});
     box-shadow: $box-shadow;
     border-radius: $border-radius;
 }
 
 .blur {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     width: 100%;
-    height: 110vh;
-    background-color: rgba(0, 0, 0, 0.25);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
 }
 
 .close {
     position: absolute;
-    top: 20px;
+    top: 23px;
     right: 20px;
     cursor: pointer;
     svg {
@@ -40,24 +42,17 @@
     }
 }
 
-.day {
-    .day__temp {
-        font-size: 60px;
-        font-weight: 500;
-        color: $primary-color;
+.day__name {
+    font-size: 30px;
+    color: var(#{--text-color-default});
+    margin-bottom: 12px;
+}
+
+.img {
+    svg {
+        width: 80px;
+        height: 80px;
         margin-bottom: 12px;
-    }
-    .day__name {
-        font-size: 25px;
-        color: #000000;
-        margin-bottom: 12px;
-    }
-    .img {
-        svg {
-            width: 53px;
-            height: 53px;
-            margin-bottom: 12px;
-        }
     }
 }
 
@@ -66,7 +61,87 @@
     font-size: 15px;
     color: $base-color;
 }
+.day__temp {
+    font-size: 80px;
+    font-weight: 500;
+    color: $primary-color;
+    margin-bottom: 12px;
+}
 
+@media (max-width: 905px) {
+    .popup {
+    position:fixed;
+    top: 20%;
+    left: calc(50% - 325px);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
+    margin-top: 20px;
+    max-width: 500px;
+    background: var(#{--components-background-default});
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    }
+}
+@media (max-width: 768px) {
+    .popup {
+        position:fixed;
+        top: 20%;
+        left: calc(58% - 325px);
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 40px;
+        margin-top: 20px;
+        max-width: 500px;
+        background: var(#{--components-background-default});
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        }
+}
 
-
-    
+@media (max-width: 500px) {
+    .popup {
+        position: fixed;
+        top: 20%;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+        margin-top: 15px;
+        max-width: 574px;
+        background: var(--components-background-default);
+        box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+        border-radius: 20px;
+    }
+    .day__temp {
+        font-size: 48px;
+        font-weight: 500;
+        color: $primary-color;
+        margin-bottom: 12px;
+    }
+    .img {
+        svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 12px;
+        }
+    }
+    .day__name {
+        font-size: 20px;
+        color: var(#{--text-color-default});
+        margin-bottom: 12px;
+    }
+    .close {
+        top: 7px;
+    }
+}
