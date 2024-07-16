@@ -5,7 +5,7 @@ interface Props {}
 export const Tabs = (props: Props) => {
     const tabs = [
         {
-        value: 'На 5 днів. На 18:00',
+        value: 'На 5 днів. На 15:00',
         },
         // {
         // value: 'На 10 днів',
